@@ -39,8 +39,7 @@ pipeline {
 //         }
         stage('Deliver') {
             steps {
-                sh 'apt-get update'
-                sh 'apt-get install sudo'
+                sh 'apt-get update && apt-get -y install sudo'
                 sh 'sudo ./jenkins/scripts/deliver.sh'
             }
         }
