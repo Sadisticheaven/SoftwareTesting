@@ -56,6 +56,7 @@ pipeline {
 //                 sh 'mv sources.list.wheezy sources.list'
 //                 sh 'apt-get update && apt-get -y install sudo'
 //                 sh 'sudo ./jenkins/scripts/deliver.sh'
+                sh 'chmod 777 ./jenkins/scripts/deliver.sh'
                 sh './jenkins/scripts/deliver.sh'
             }
         }
