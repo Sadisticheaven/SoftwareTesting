@@ -39,10 +39,14 @@ pipeline {
 //         }
         stage('Deliver') {
             steps {
-                sh 'echo "deb http://mirrors.163.com/debian/ jessie main non-free contrib">/etc/apt/sources.list'
-                sh 'echo "deb http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib">>/etc/apt/sources.list'
-                sh 'echo "deb-src http://mirrors.163.com/debian/ jessie main non-free contrib">>/etc/apt/sources.list'
-                sh 'echo "deb-src http://mirrors.163.com/debian/ jessie-proposed-updates main non-free contrib">>/etc/apt/sources.list'
+                sh 'echo "deb http://archive.debian.org/debian/ jessie main non-free contrib">/etc/apt/sources.list'
+                sh 'echo "deb http://archive.debian.org/debian/ jessie-updates main non-free contrib">>/etc/apt/sources.list'
+                sh 'echo "deb http://archive.debian.org/debian/ jessie-backports main non-free contrib">>/etc/apt/sources.list'
+                sh 'echo "deb-src http://archive.debian.org/debian/ jessie main non-free contrib">>/etc/apt/sources.list'
+                sh 'echo "deb-src http://archive.debian.org/debian/ jessie-updates main non-free contrib">>/etc/apt/sources.list'
+                sh 'echo "deb-src http://archive.debian.org/debian/ jessie-backports main non-free contrib">>/etc/apt/sources.list'
+                sh 'echo "deb http://archive.debian.org/debian/ jessie/updates main non-free contrib">>/etc/apt/sources.list'
+                sh 'echo "deb-src http://archive.debian.org/debian/ jessie/updates main non-free contrib">>/etc/apt/sources.list'
 //                 sh 'echo "deb http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse">>/etc/apt/sources.list'
 //                 sh 'echo "deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse">>/etc/apt/sources.list'
 //                 sh 'echo "deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse">>/etc/apt/sources.list'
