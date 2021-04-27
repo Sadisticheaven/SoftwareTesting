@@ -54,8 +54,9 @@ pipeline {
 //                 sh 'cd /etc/apt'
 //                 sh 'wget http://mirrors.163.com/.help/sources.list.wheezy'
 //                 sh 'mv sources.list.wheezy sources.list'
-                sh 'apt-get update && apt-get -y install sudo'
-                sh 'sudo ./jenkins/scripts/deliver.sh'
+//                 sh 'apt-get update && apt-get -y install sudo'
+//                 sh 'sudo ./jenkins/scripts/deliver.sh'
+                sh './jenkins/scripts/deliver.sh'
             }
         }
     }
