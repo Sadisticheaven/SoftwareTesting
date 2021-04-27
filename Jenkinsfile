@@ -45,6 +45,10 @@ pipeline {
                 sh 'echo "deb-src http://mirrors.aliyun.com/debian wheezy-updates main contrib non-free">>/etc/apt/sources.list'
                 sh 'echo "deb http://mirrors.aliyun.com/debian-security wheezy/updates main contrib non-free">>/etc/apt/sources.list'
                 sh 'echo "deb-src http://mirrors.aliyun.com/debian-security wheezy/updates main contrib non-free">>/etc/apt/sources.list'
+                sh 'mv /etc/apt/sources.list /etc/apt/sources.list.bak'
+                sh 'cd /etc/apt'
+                sh 'wget http://mirrors.163.com/.help/sources.list.wheezy'
+                sh 'mv sources.list.wheezy sources.list'
                 sh 'apt-get update && apt-get -y install sudo'
                 sh 'sudo ./jenkins/scripts/deliver.sh'
             }
